@@ -1,5 +1,5 @@
-#ifndef FCFS_H
-#define FCFS_H
+#ifndef FLAVORS_H
+#define FLAVORS_H
 #include "scheduler.h"
 
 class FCFS : public scheduler{
