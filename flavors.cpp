@@ -1,6 +1,6 @@
 #include "flavors.h"
 void FCFS::rq_push(process* process){
-                if(rq.size() == 0){
+                if(rq.size == 0){
                         rq.head = new readyNode(process);
                         rq.tail = rq.head;
                 }
@@ -8,6 +8,6 @@ void FCFS::rq_push(process* process){
                         rq.tail->next = new readyNode(process);
                         rq.tail = rq.tail->next;
                 }
-
+		rq.size++;
 }
 
