@@ -3,9 +3,8 @@
 #include "scheduler.h"
 
 class FCFS : public scheduler{
-	void rq_push(process* process);
-	void 
-}
+public:
+    void rq_push(process* process) override;
+};
 
-
-#endif	     
+#endif
