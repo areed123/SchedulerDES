@@ -203,3 +203,33 @@ void scheduler::run(){
 
 // simple setters (if needed elsewhere)
 // implementations already in-header as inline methods; no additional definitions required here.
+
+void scheduler::reset(){
+    // Clear event queue
+    eNode* curr = eq.head;
+    while(curr != nullptr){
+        eNode* next = curr->next;
+        delete curr->nodeEvent; // Ensure we free event and its process
+        delete curr;
+        curr = next;
+    }
+    eq.head = eq.tail = nullptr;
+
+    // Clear ready queue
+    readyNode* rq_curr = rq.head;
+    while(rq_curr != nullptr){
+        readyNode* next = rq_curr->next;
+        delete rq_curr;
+        rq_curr = next;
+    }
+    rq.head = rq.tail = nullptr;
+    rq.size = 0;
+
+    // Reset state variables
+    processCounter = 0;
+    arrivalCounter = 0;
+    clock = 0.0;
+    busyCores = 0;
+    contextSwitchCount = 0;
+    lastBusyStartTime = 0.0;
+}

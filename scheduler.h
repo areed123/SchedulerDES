@@ -75,6 +75,9 @@ class scheduler {
     double lastBusyStartTime = 0.0;
 
     public:
+        // Virtual destructor for proper cleanup of derived classes
+        virtual ~scheduler() = default;
+
         // handlers
         virtual void arrivalHandler(event* event);
         virtual void departHandler(event* event);
@@ -99,6 +102,7 @@ class scheduler {
         bool processCompleted(event* e);
 
         void run();
+        void reset();
 
         // simple configuration setters
         void setProcessCount(int c){ processCount = c; }
