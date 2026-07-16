@@ -110,6 +110,9 @@ class scheduler {
         void setServTime(double s){ servTime = s; }
         void setCoreCount(int c){ coreCount = c; }
         void setMetrics(metrics* m){ metricsPtr = m; }
+
+        // Read-only accessors
+        double getClock() const { return clock; }
 };
 
 #endif

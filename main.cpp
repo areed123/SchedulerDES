@@ -22,6 +22,9 @@ scheduler* createScheduler(const std::string& algorithmName) {
     if (algorithmName == "FCFS") {
         return new FCFS();
     }
+    if (algorithmName == "SJF") {
+        return new SJF();
+    }
     // Add more algorithms here as they're implemented
     std::cerr << "Unknown algorithm: " << algorithmName << std::endl;
     return nullptr;

@@ -7,4 +7,9 @@ public:
     void rq_push(process* process) override;
 };
 
+class SJF : public scheduler {
+public:
+    void rq_push(process* process) override;
+};
+
 #endif
